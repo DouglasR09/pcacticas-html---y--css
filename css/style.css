@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+}
+
+.container__cards{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.card{
+    width: 300px;
+    margin: 10px;
+    transition: all 300ms;
+}
+.card .cover{
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.card .cover img{
+    width: 250px;
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    z-index: 1;
+    
+    transition: all 400ms;
+}
+
+/*insertando las imegenes de fondo*/
+
+.card .img__back{
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px 20px 0 0;
+    transition: all 300ms;
+}
+
+.card:nth-of-type(1) .img__back{
+    background-image: url(../img/fondo1.jpg);
+}
+.card:nth-of-type(2) .img__back{
+    background-image: url(../img/fondo2.jpg);
+}
+.card:nth-of-type(3) .img__back{
+    background-image: url(../img/fondo3.png);
+}
+
+
+/*Dandole estilo a la descripcion*/
+
+.card .description{
+    background: white;
+    margin-top: -10px;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    transition: all 300ms;
+
+}
+.card .description h2{
+    margin-top: 10px;
+}
+
+.card .description p{
+    margin-top: 10px;
+}
+ 
+/*Dandole estilos an input*/
+.card .description input{
+    padding: 10px 40px;
+    margin-top: 20px;
+    border:none;
+    background: rgba(37, 107, 212, 0.932);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.card .description input:hover{
+    background: rgb(34, 93, 180);
+}
+
+/*crando el efecto hover PARALLAX*/
+
+.card:hover{
+    width: 350px;
+}
+.card:hover .cover img{
+    top: 0;
+    filter: drop-shadow(5px 5px 4px rgba(223, 171, 61, 0.6));
+}
+.card:hover .img__back{
+    bottom: -40px;
+}
+.card:hover .description{
+    padding: 40px;
+}
